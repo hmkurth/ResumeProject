@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ResumePortfolioSite.Models;
+using ResumePortfolioSite.ViewModels;
 
 namespace ResumePortfolioSite.Controllers
 {
@@ -12,7 +13,9 @@ namespace ResumePortfolioSite.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            ResumeIndexViewModel resumeIndexViewModel = new ResumeIndexViewModel();
+
+            return View(resumeIndexViewModel);
         }
 
 

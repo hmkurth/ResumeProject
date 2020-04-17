@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ResumePortfolioSite.Views.Resume
+namespace ResumePortfolioSite.Models
 {
     public class Education
     {
@@ -11,7 +12,8 @@ namespace ResumePortfolioSite.Views.Resume
         public string SchoolName { get; set; }
         public int StartYear { get; set; }
         public string StartMonth { get; set; }
-        public int GraduationYear { get; set; }
+        
+        public int? GraduationYear { get; set; }
         public string GraduationMonth { get; set; }
 
     }

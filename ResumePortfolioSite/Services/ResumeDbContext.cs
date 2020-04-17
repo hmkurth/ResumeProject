@@ -22,6 +22,15 @@ namespace ResumePortfolioSite.Services
             return Educations.ToList();
         }
 
+        internal bool AnyEducationItemsExist()
+        {
+            return Educations.Any();
+        }
 
+        internal void AddEducationItem(Education educationItem)
+        {
+            Educations.Add(educationItem);
+            SaveChanges();
+        }
     }
 }

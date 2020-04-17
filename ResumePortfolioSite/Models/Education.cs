@@ -10,6 +10,8 @@ namespace ResumePortfolioSite.Models
     {
         public int EducationId { get; set; }
         public string SchoolName { get; set; }
+
+        public string Degree { get; set; }
         public int StartYear { get; set; }
         public string StartMonth { get; set; }
         

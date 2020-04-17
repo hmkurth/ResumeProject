@@ -11,6 +11,21 @@
 {
     <p>Coming soon...</p>
 }
+else
+{
+    foreach (Education educationItem in Model.EducationItems)
+    {
+        string graduationYear = "Present";
+        if (educationItem.GraduationYear != null)
+        {
+            graduationYear = educationItem.GraduationYear.ToString();
+        }
+        
+        <h3>@educationItem.SchoolName</h3>
+        <p>@educationItem.StartYear to @graduationYear</p>
+        <p>@educationItem.Degree</p>
+    }
+}
 
 <br />
 

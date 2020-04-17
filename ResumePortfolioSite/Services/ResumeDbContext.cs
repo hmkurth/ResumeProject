@@ -16,5 +16,12 @@ namespace ResumePortfolioSite.Services
         }
 
         DbSet<Education> Educations { get; set; }
+
+        public List<Education> GetAllEducationEntries()
+        {
+            return Educations.ToList();
+        }
+
+
     }
 }

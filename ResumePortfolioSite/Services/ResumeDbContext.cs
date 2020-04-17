@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ResumePortfolioSite.Services
 {
-    public class ResumeDbContext : DbContext
+    public class ResumeDbContext : DbContext, IResumeRepository
     {
         public ResumeDbContext(DbContextOptions<ResumeDbContext> options)
             : base(options)
@@ -22,12 +22,12 @@ namespace ResumePortfolioSite.Services
             return Educations.ToList();
         }
 
-        internal bool AnyEducationItemsExist()
+        public bool AnyEducationItemsExist()
         {
             return Educations.Any();
         }
 
-        internal void AddEducationItem(Education educationItem)
+        public void AddEducationItem(Education educationItem)
         {
             Educations.Add(educationItem);
             SaveChanges();

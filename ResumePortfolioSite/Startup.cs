@@ -29,6 +29,8 @@ namespace ResumePortfolioSite
             services.AddDbContext<ResumeDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ResumeLocalConnection"))
                 );
+
+            services.AddScoped<IResumeRepository, ResumeDbContext>();
                 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

@@ -12,18 +12,18 @@ namespace ResumePortfolioSite.Controllers
 {
     public class ResumeController : Controller
     {
-        private ResumeDbContext _resumeDbContext;
+        private IResumeRepository _resumeRepository;
 
-        public ResumeController(ResumeDbContext resumeDbContext)
+        public ResumeController(IResumeRepository resumeDbContext)
         {
-            _resumeDbContext = resumeDbContext;
+            _resumeRepository = resumeDbContext;
         }
 
         public IActionResult Index()
         {
             ResumeIndexViewModel resumeIndexViewModel = new ResumeIndexViewModel();
 
-            resumeIndexViewModel.EducationItems = _resumeDbContext.GetAllEducationEntries();
+            resumeIndexViewModel.EducationItems = _resumeRepository.GetAllEducationEntries();
 
             return View(resumeIndexViewModel);
         }

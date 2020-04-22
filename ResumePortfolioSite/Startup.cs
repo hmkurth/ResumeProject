@@ -27,7 +27,7 @@ namespace ResumePortfolioSite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ResumeDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ResumeLocalConnection"))
+                    options.UseSqlServer(Configuration.GetConnectionString("ResumeDbConnection"))
                 );
 
             services.AddScoped<IResumeRepository, ResumeDbContext>();

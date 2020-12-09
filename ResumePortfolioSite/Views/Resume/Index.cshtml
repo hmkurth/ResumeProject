@@ -8,7 +8,7 @@
 
 <h2>Education</h2>
 
-@if(Model.EducationItems.Count() == 0)
+@if (Model.EducationItems.Count() == 0)
 {
     <p>Coming soon...</p>
 }
@@ -21,9 +21,9 @@ else
         {
             graduationYear = educationItem.GraduationYear.ToString();
         }
-        
+
         <h3>@educationItem.SchoolName</h3>
-        <p>@educationItem.StartYear to @graduationYear</p>
+        <p>@educationItem.StartYear to @educationItem.GraduationYear</p>
         <p>@educationItem.Degree</p>
         <br />
     }
@@ -32,11 +32,40 @@ else
 
 
 <h2>Jobs</h2>
-<p>Coming soon...</p>
+@if (Model.JobItems.Count() == 0)
+{
+    <p>Coming soon...</p>
+}
+else
+{
+    foreach (Job jobItem in Model.JobItems)
+    {
 
+
+        <h3>@jobItem.CompanyName</h3>
+        <p>@jobItem.StartMonth,@jobItem.StartYear to @jobItem.DateEnded;</p>
+        <p>@jobItem.Position</p>
+        <br />
+    }
+}
+<hr />
 <hr />
 
 <h2>Skills</h2>
-<p>Coming soon...</p>
+@if (Model.SkillItems.Count() == 0)
+{
+    <p>Coming soon...</p>
+}
+else
+{
+    foreach (Skill skillItem in Model.SkillItems)
+    {
 
-<br />
+
+        <h3>@skillItem.SkillName</h3>
+        <p>@skillItem.StartYear </p>
+        <p>@skillItem.Description</p>
+        <br />
+    }
+}
+<hr />

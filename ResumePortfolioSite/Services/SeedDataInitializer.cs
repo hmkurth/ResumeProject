@@ -42,19 +42,34 @@ namespace ResumePortfolioSite.Services
                 anotherEducationItem.StartMonth = "September";
                 anotherEducationItem.Degree = "None, Studied Liberal Arts";
 
-                _resumeDbContext.AddEducationItem(anotherEducationItem);
+                _resumeDbContext.AddEducationItem(yetanotherEducationItem);
             }
-            if (!_resumeDbContext.AnyJobItemsExist())
+
+
+            if (!_resumeDbContext.AnySkillItemsExist())
             {
 
-                Job mostRecentJob = new Job();
-                mostRecentJob.CompanyName = "Epic Systems";
-                mostRecentJob.StartYear = 2007;
-                mostRecentJob.DateEnded = 1/21/2019;
-                mostRecentJob.StartMonth = "May";
-                mostRecentJob.Position = "Chef";
+                Skill mostRecentSkill = new Skill();
+                mostRecentSkill.SkillName = "Java Programming";
+                mostRecentSkill.StartYear = 2020;
+                mostRecentSkill.Description = "learned java coding";
+               
 
-                _resumeDbContext.AddJobItem(mostRecentJob);
+                _resumeDbContext.AddSkillItem(mostRecentSkill);
+
+            }
+
+            if (!_resumeDbContext.AnyJobItemsExist())
+            {
+                Job jobItem = new Job();
+                jobItem.CompanyName = "Epic Systems";
+                jobItem.StartYear = 2007;
+                jobItem.DateEnded = 2019;
+                jobItem.StartMonth = "May";
+                jobItem.Position = "Chef";
+
+                _resumeDbContext.AddJobItem(jobItem);
+
 
             }
         }

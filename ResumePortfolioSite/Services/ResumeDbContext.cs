@@ -68,9 +68,14 @@ namespace ResumePortfolioSite.Services
             return await Educations.FindAsync(id);
         }
 
+        internal bool AnySkillItemsExist()
+        {
+            return Skills.Any();
+        }
+
         internal bool AnyJobItemsExist()
         {
-            throw new NotImplementedException();
+            return Jobs.Any();
         }
 
         public void RemoveEducationItem(Education education)
@@ -195,7 +200,7 @@ namespace ResumePortfolioSite.Services
         {
             return Skills.Any(e => e.SkillId == id);
         }
-        private bool SkillItemsExists(int id)
+        public bool SkillItemsExists(int id)
         {
             return Skills.Any(e => e.SkillId == id);
         }

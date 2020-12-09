@@ -10,10 +10,8 @@ namespace ResumePortfolioSite.Models
         public int SkillId { get; set; }
         public string SkillName { get; set; }
 
-        public string Position { get; set; }
+        public string Description { get; set; }
         public int StartYear { get; set; }
-        public string StartMonth { get; set; }
-
-        public int? DateEnded { get; set; }
+       
     }
 }

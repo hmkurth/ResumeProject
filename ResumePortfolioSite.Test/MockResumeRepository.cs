@@ -51,12 +51,13 @@ namespace ResumePortfolioSite.Test
 
         public List<Job> GetAllJobEntries()
         {
-            throw new NotImplementedException();
+           return new List<Job>();
         }
 
         public List<Skill> GetAllSkillEntries()
         {
-            throw new NotImplementedException();
+
+            return new List<Skill>();
         }
 
         public void RemoveEducationItem(Education education)

@@ -40,7 +40,11 @@ else
 {
     foreach (Job jobItem in Model.JobItems)
     {
-
+        string dateEnded = "Present";
+        if (jobItem.DateEnded != null)
+        {
+            dateEnded = jobItem.DateEnded.ToString();
+        }
 
         <h3>@jobItem.CompanyName</h3>
         <p>@jobItem.StartMonth,@jobItem.StartYear to @jobItem.DateEnded;</p>

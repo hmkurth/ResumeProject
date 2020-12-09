@@ -73,11 +73,6 @@ namespace ResumePortfolioSite.Services
             return Skills.Any();
         }
 
-        internal bool AnyJobItemsExist()
-        {
-            return Jobs.Any();
-        }
-
         public void RemoveEducationItem(Education education)
         {
             Educations.Remove(education);
@@ -89,12 +84,17 @@ namespace ResumePortfolioSite.Services
         //Jobs
 
 
-
-
-        public bool JobItemExists(int id)
+        public bool AnyJobItemsExist()
         {
             return Jobs.Any();
         }
+
+
+        private bool JobItemExists(int id)
+        {
+            return Jobs.Any(e => e.JobId == id);
+        }
+
 
         public List<Job> GetAllJobEntries()
         {

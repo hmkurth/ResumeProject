@@ -24,6 +24,8 @@ namespace ResumePortfolioSite.Controllers
             ResumeIndexViewModel resumeIndexViewModel = new ResumeIndexViewModel();
 
             resumeIndexViewModel.EducationItems = _resumeRepository.GetAllEducationEntries();
+            resumeIndexViewModel.JobItems = _resumeRepository.GetAllJobEntries();
+            resumeIndexViewModel.SkillItems = _resumeRepository.GetAllSkillEntries();
 
             return View(resumeIndexViewModel);
         }

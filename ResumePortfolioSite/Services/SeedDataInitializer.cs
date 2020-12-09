@@ -22,19 +22,39 @@ namespace ResumePortfolioSite.Services
             {
                 Education educationItem = new Education();
                 educationItem.SchoolName = "Madison College";
-                educationItem.StartYear = 2020;
+                educationItem.StartYear = 2019;
                 educationItem.StartMonth = "September";
-                educationItem.Degree = "AS, IT - Web Software";
+                educationItem.Degree = "IT - Web Software";
 
                 _resumeDbContext.AddEducationItem(educationItem);
 
                 Education anotherEducationItem = new Education();
-                anotherEducationItem.SchoolName = "UW Madison";
-                anotherEducationItem.StartYear = 2015;
+                anotherEducationItem.SchoolName = "Fort Hays University";
+                anotherEducationItem.StartYear = 2013;
                 anotherEducationItem.StartMonth = "September";
-                anotherEducationItem.Degree = "BA, English";
+                anotherEducationItem.Degree = "None, Studied Sociology";
 
                 _resumeDbContext.AddEducationItem(anotherEducationItem);
+
+                Education yetanotherEducationItem = new Education();
+                anotherEducationItem.SchoolName = "Northland College";
+                anotherEducationItem.StartYear = 1999;
+                anotherEducationItem.StartMonth = "September";
+                anotherEducationItem.Degree = "None, Studied Liberal Arts";
+
+                _resumeDbContext.AddEducationItem(anotherEducationItem);
+            }
+            if (!_resumeDbContext.AnyJobItemsExist())
+            {
+
+                Job mostRecentJob = new Job();
+                mostRecentJob.CompanyName = "Epic Systems";
+                mostRecentJob.StartYear = 2007;
+                mostRecentJob.DateEnded = 1/21/2019;
+                mostRecentJob.StartMonth = "May";
+                mostRecentJob.Position = "Chef";
+
+                _resumeDbContext.AddJobItem(mostRecentJob);
 
             }
         }

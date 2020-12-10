@@ -37,10 +37,10 @@ namespace ResumePortfolioSite.Services
                 _resumeDbContext.AddEducationItem(anotherEducationItem);
 
                 Education yetanotherEducationItem = new Education();
-                anotherEducationItem.SchoolName = "Northland College";
-                anotherEducationItem.StartYear = 1999;
-                anotherEducationItem.StartMonth = "September";
-                anotherEducationItem.Degree = "None, Studied Liberal Arts";
+                yetanotherEducationItem.SchoolName = "Northland College";
+                yetanotherEducationItem.StartYear = 1999;
+                yetanotherEducationItem.StartMonth = "September";
+                yetanotherEducationItem.Degree = "None, Studied Liberal Arts";
 
                 _resumeDbContext.AddEducationItem(yetanotherEducationItem);
             }
